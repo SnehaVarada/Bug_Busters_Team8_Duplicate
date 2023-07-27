@@ -131,5 +131,60 @@
     <version>7.13.0</version>
 </dependency>
 
+
+	<!--<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.21.0</version>
+</dependency>-->
+
+<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<scope>provided</scope>
+		</dependency>
+		
+
 </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version>
+
+				<configuration>
+					<includes>
+						<include>**/TestRunner.java</include>
+					</includes>
+					<suiteXmlFiles>
+
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+
+			</plugin>-->
+		<!--	
+          <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    -Dcucumber.options="plugin io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                </argLine> 
+        </configuration>
+      </plugin>-->
 </project>
